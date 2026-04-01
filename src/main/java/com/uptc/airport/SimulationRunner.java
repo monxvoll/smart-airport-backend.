@@ -5,7 +5,7 @@ import com.uptc.airport.service.Airport;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component disabling auto start
 public class SimulationRunner implements CommandLineRunner {
 
     private final Airport airport;
