@@ -48,6 +48,8 @@ public class Airport {
             gates.acquire();
             sendLog(airplaneName, "GATE_ASSIGNED", "has an assigned gate. Looking for a free runway...");
 
+            Thread.sleep(500); //Optional time to the better simulation in front
+
             // 2. Find a runway (Mutual Exclusion with Lock).
             int assignedRunway = -1;
             while (assignedRunway == -1) {
@@ -64,7 +66,8 @@ public class Airport {
 
             // Using the runway
             sendLog(airplaneName, "LANDING", "landing on runway " + (assignedRunway + 1));
-            // Thread.sleep(2000); // Simulating the time it takes to land.
+           //  Thread.sleep(2000); // Simulating the time it takes to land.
+            Thread.sleep(5000); //Time time to land
 
             // Releasing the runway immediately after using it.
             runways[assignedRunway].unlock();
